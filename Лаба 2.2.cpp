@@ -1,4 +1,4 @@
-﻿#define NOMINMAX
+#define NOMINMAX
 #include <iostream>
 #include <chrono>
 #include <cstdlib>
@@ -392,9 +392,11 @@ void arrMenu() {
         case 4: {
             system("cls");
             if (!arr || length == 0) { cout << "Массив пуст.\n"; break; }
+            printArr(arr, length);
             int index = readInt("Индекс вставки: ");
             int value = readInt("Значение (0-99): ");
             arr = insertArr(arr, index, value, length);
+            printArr(arr, length);
             system("pause");
             system("cls");
             break;
@@ -402,8 +404,10 @@ void arrMenu() {
         case 5: {
             system("cls");
             if (!arr || length == 0) { cout << "Массив пуст.\n"; break; }
+            printArr(arr, length);
             int index = readInt("Индекс удаления: ");
             arr = delArrIndex(arr, index, length);
+            printArr(arr, length);
             system("pause");
             system("cls");
             break;
@@ -411,8 +415,10 @@ void arrMenu() {
         case 6: {
             system("cls");
             if (!arr || length == 0) { cout << "Массив пуст.\n"; break; }
+            printArr(arr, length);
             int value = readInt("Значение для удаления: ");
             arr = delArrValue(arr, value, length);
+            printArr(arr, length);
             system("pause");
             system("cls");
             break;
@@ -420,9 +426,11 @@ void arrMenu() {
         case 7: {
             system("cls");
             if (!arr || length == 0) { cout << "Массив пуст.\n"; break; }
+            printArr(arr, length);
             int i1 = readInt("Первый индекс: ");
             int i2 = readInt("Второй индекс: ");
             swapArr(arr, i1, i2, length);
+            printArr(arr, length);
             system("pause");
             system("cls");
             break;
@@ -430,6 +438,7 @@ void arrMenu() {
         case 8: {
             system("cls");
             if (!arr || length == 0) { cout << "Массив пуст.\n"; break; }
+            printArr(arr, length);
             int index = readInt("Индекс: ");
             showArrIndex(arr, index, length);
             system("pause");
@@ -439,6 +448,7 @@ void arrMenu() {
         case 9: {
             system("cls");
             if (!arr || length == 0) { cout << "Массив пуст.\n"; break; }
+            printArr(arr, length);
             int value = readInt("Значение: ");
             showArrValue(arr, value, length);
             system("pause");
@@ -821,9 +831,11 @@ void listMenu() {
         case 4: {
             system("cls");
             if (!head) { cout << "Список не создан.\n"; break; }
+            printList(head, size);
             int index = readInt("Индекс вставки: ");
             int value = readInt("Значение (0-99): ");
             head = insertList(head, size, index, value);
+            printList(head, size);
             system("pause");
             system("cls");
             break;
@@ -831,8 +843,10 @@ void listMenu() {
         case 5: {
             system("cls");
             if (!head || size == 0) { cout << "Список пуст.\n"; break; }
+            printList(head, size);
             int index = readInt("Индекс удаления: ");
             head = delListIndex(head, size, index);
+            printList(head, size);
             system("pause");
             system("cls");
             break;
@@ -840,8 +854,10 @@ void listMenu() {
         case 6: {
             system("cls");
             if (!head || size == 0) { cout << "Список пуст.\n"; break; }
+            printList(head, size);
             int value = readInt("Значение для удаления: ");
             head = delListValue(head, size, value);
+            printList(head, size);
             system("pause");
             system("cls");
             break;
@@ -849,9 +865,11 @@ void listMenu() {
         case 7: {
             system("cls");
             if (!head || size == 0) { cout << "Список пуст.\n"; break; }
+            printList(head, size);
             int i1 = readInt("Первый индекс: ");
             int i2 = readInt("Второй индекс: ");
             swapList(head, size, i1, i2);
+            printList(head, size);
             system("pause");
             system("cls");
             break;
@@ -859,6 +877,7 @@ void listMenu() {
         case 8: {
             system("cls");
             if (!head || size == 0) { cout << "Список пуст.\n"; break; }
+            printList(head, size);
             int index = readInt("Индекс: ");
             showListIndex(head, size, index);
             system("pause");
@@ -868,6 +887,7 @@ void listMenu() {
         case 9: {
             system("cls");
             if (!head || size == 0) { cout << "Список пуст.\n"; break; }
+            printList(head, size);
             int value = readInt("Значение: ");
             showListValue(head, size, value);
             system("pause");
